@@ -646,11 +646,11 @@ globalkeys = gears.table.join(
               {description = "run prompt", group = "launcher"}),
     awful.key({ "Ctrl", "Shift" },            "l",     function () awful.util.spawn("betterlockscreen -l") end,
               {description = "Lock screen", group = "Lock"}),
-    awful.key({ "Ctrl" },            "b",     function () awful.util.spawn(chrome) end,
+    awful.key({ modkey },            "b",     function () awful.util.spawn(chrome) end,
               {description = "open google chrome", group = "launcher"}),
-    awful.key({ "Ctrl" },            "t",     function () awful.util.spawn(telegram) end,
+    awful.key({  modkey },            "t",     function () awful.util.spawn(telegram) end,
               {description = "open telegram", group = "launcher"}),
-     awful.key({ "Ctrl" },            "f",     function () awful.util.spawn(thunar) end,
+     awful.key({ modkey},            "f",     function () awful.util.spawn(thunar) end,
               {description = "open thunar", group = "launcher"}),
 
 
