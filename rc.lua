@@ -348,6 +348,7 @@ telegram = "/opt/Telegram/Telegram -- %u"
 discord = "/opt/Discord/Discord"
 chrome = "google-chrome"
 thunar = "thunar"
+firefox = "firefox"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -392,6 +393,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "  Thunar", thunar},
                                     { " Telegram", telegram },
                                     { " Chrome", chrome },
+                                    { " Firefox", firefox},
                                     { " Discord", discord },
                                   }
                         })
@@ -646,12 +648,17 @@ globalkeys = gears.table.join(
               {description = "run prompt", group = "launcher"}),
     awful.key({ "Ctrl", "Shift" },            "l",     function () awful.util.spawn("betterlockscreen -l") end,
               {description = "Lock screen", group = "Lock"}),
-    awful.key({ modkey },            "b",     function () awful.util.spawn(chrome) end,
+     awful.key({ modkey },            "c",     function () awful.util.spawn(chrome) end,
               {description = "open google chrome", group = "launcher"}),
+     awful.key({ modkey },            "b",     function () awful.util.spawn(firefox) end,
+              {description = "open firefox", group = "launcher"}),
     awful.key({  modkey },            "t",     function () awful.util.spawn(telegram) end,
               {description = "open telegram", group = "launcher"}),
-     awful.key({ modkey},            "f",     function () awful.util.spawn(thunar) end,
+    awful.key({ modkey},            "f",     function () awful.util.spawn(thunar) end,
               {description = "open thunar", group = "launcher"}),
+     awful.key({ modkey},            "z",     function () awful.util.spawn("zeditor") end,
+              {description = "open zeditor", group = "launcher"}),
+
 
 
 
