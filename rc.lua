@@ -38,13 +38,29 @@ end
 -- Create a text widget for WLAN
 wlan_widget = wibox.widget.textbox()
 
--- Update SSID every 10 seconds
+-- Set initial text
+get_ssid()
+
+-- Update the SSID periodically
 gears.timer {
-    timeout = 5,
-    call_now = true,
+    timeout   = 10,
+    call_now  = true,
     autostart = true,
-    callback = get_ssid
+    callback  = get_ssid
 }
+
+-- Add a click event to open iwgtk
+wlan_widget:buttons(
+    awful.util.table.join(
+        awful.button({}, 1, function()
+            awful.spawn("iwgtk")
+        end)
+    )
+)
+
+
+
+
 
 -- CPU
 cpu_widget = wibox.widget.textbox()
